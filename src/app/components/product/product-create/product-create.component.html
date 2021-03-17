@@ -1,3 +1,9 @@
-<p [id]="myAttr">product-create works!</p>
+<p>product-create works!</p>
 
-<button (click)="change()">Change</button>
+<button (click)="createProduct()" mat-raised-button color="primary">
+  Salvar
+</button>
+
+<button (click)="cancel()" mat-raised-button>
+  Cancelar
+</button>
