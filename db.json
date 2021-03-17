@@ -8,12 +8,17 @@
     {
       "id": 2,
       "name": "Notebook Mac Pro",
-      "price": 12000.00
+      "price": 12000
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Sansung S20+",
       "price": 5000.89
+    },
+    {
+      "name": "Iphone 11",
+      "price": 3999.99,
+      "id": 4
     }
   ]
 }
