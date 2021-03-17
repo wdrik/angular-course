@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCreateComponent implements OnInit {
 
+  myAttr = 'anywhere';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  change(): void {
+    console.log('change');
+    console.log(this.myAttr);
+  }
 }
