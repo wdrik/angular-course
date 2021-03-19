@@ -2,3 +2,19 @@ table {
   width: 100%;
   margin-top: 10px;
 }
+
+i.material-icons {
+  font-size: 20px;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #333333;
+}
+
+.delete > i {
+  color: #e35e6b;
+}
