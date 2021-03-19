@@ -19,4 +19,12 @@ export class ProductReadComponent implements OnInit {
       this.products = products;
     })
   }
+
+  deleteProduct(id: string): void {
+    this.productService.delete(id).subscribe(() => {
+      this.productService.showMessage('Produto deletado com sucesso!');
+
+      this.products = this.products.filter(product => product.id?.toString() !== id);
+    })
+  }
 }

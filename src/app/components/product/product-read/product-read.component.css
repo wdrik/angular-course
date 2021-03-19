@@ -5,6 +5,7 @@ table {
 
 i.material-icons {
   font-size: 20px;
+  cursor: pointer;
 }
 
 .edit {
