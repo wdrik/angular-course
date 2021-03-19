@@ -19,6 +19,16 @@
       "name": "Iphone 11",
       "price": 3999.99,
       "id": 4
+    },
+    {
+      "name": "Geladeira",
+      "price": "1890.44",
+      "id": 9
+    },
+    {
+      "name": "kkkkkkkkkkkkk",
+      "price": "111",
+      "id": 10
     }
   ]
 }
