@@ -32,4 +32,12 @@ export class ProductService {
   create(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(this.baseUrl, product);
   }
+
+  readById(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`${this.baseUrl}/${id}`);
+  }
+
+  update(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(`${this.baseUrl}/${product.id}`, product)
+  }
 }
