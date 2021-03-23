@@ -4,7 +4,33 @@
     Sistema para exemplificar a construção de um cadastro em Angular
   </mat-card-subtitle>
 
-  <ul>
-    <li *myFor="let n em [1, 2, 3]">{{ n }}</li>
-  </ul>
+  <div class="kkkk">
+    <!-- <button (click)="toggleData()">Toggle data</button> -->
+
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+      [(ngModel)]="favoriteSeason">
+      <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{ season | titlecase }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <section *ngIf="favoriteSeason === 'graphic'">
+    <div style="display: block;">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+
+    <div style="display: block;">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+        [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+      </canvas>
+    </div>
+
+  </section>
+
+  <section *ngIf="favoriteSeason === 'table'">
+    KKKKKK
+  </section>
 </mat-card>

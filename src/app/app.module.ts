@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -34,6 +35,8 @@ import { ProductReadComponent } from './components/product/product-read/product-
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 registerLocaleData(localePt);
 
@@ -67,7 +70,9 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule,
+    ChartsModule
   ],
   providers: [{
     provide: LOCALE_ID,

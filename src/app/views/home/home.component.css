@@ -7,3 +7,30 @@
 .home .subtitle {
   font-size: 1.1rem;
 }
+
+section {
+  width: 100%;
+
+  display: flex;
+}
+
+section > div {
+  width: 50%;
+  margin: 10px;
+}
+
+.example-radio-group {
+  display: flex;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.kkkk {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
