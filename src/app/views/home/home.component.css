@@ -1,11 +1,11 @@
 .home .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
 .home .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 section {
@@ -16,7 +16,7 @@ section {
 
 section > div {
   width: 50%;
-  margin: 10px;
+  margin: 8px;
 }
 
 .example-radio-group {
@@ -28,9 +28,17 @@ section > div {
   margin: 5px;
 }
 
-.kkkk {
+.container {
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.container section {
+  width: 100%;
+}
+
+.mat-table {
+  width: 100%;
 }

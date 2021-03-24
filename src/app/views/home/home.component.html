@@ -1,12 +1,10 @@
 <mat-card class="home mat-elevation-z3">
-  <mat-card-title class="title">Bem vindo!</mat-card-title>
+  <mat-card-title class="title">{{ favoriteSeason | titlecase }}</mat-card-title>
   <mat-card-subtitle class="subtitle">
-    Sistema para exemplificar a construção de um cadastro em Angular
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
   </mat-card-subtitle>
 
-  <div class="kkkk">
-    <!-- <button (click)="toggleData()">Toggle data</button> -->
-
+  <div class="container">
     <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
       [(ngModel)]="favoriteSeason">
       <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
@@ -31,6 +29,33 @@
   </section>
 
   <section *ngIf="favoriteSeason === 'table'">
-    KKKKKK
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z3">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
   </section>
 </mat-card>
