@@ -42,3 +42,20 @@ section > div {
 .mat-table {
   width: 100%;
 }
+
+.mat-column-rank {
+  max-width: 10%;
+}
+
+.mat-column-name {
+  max-width: 40%;
+}
+
+.mat-column-price {
+  max-width: 50%;
+}
+
+.mat-column-name img {
+  width: 30px;
+  margin-right: 10px;
+}

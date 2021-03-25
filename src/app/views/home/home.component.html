@@ -25,33 +25,29 @@
         [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
       </canvas>
     </div>
-
   </section>
 
   <section *ngIf="favoriteSeason === 'table'">
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z3">
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <mat-table [dataSource]="coins" class="mat-elevation-z3">
+      <!-- Rank Column -->
+      <ng-container matColumnDef="rank">
+        <mat-header-cell *matHeaderCellDef> <strong>#</strong> </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.rank}} </mat-cell>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef> <strong>Name</strong> </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <img src="assets/img/{{item.id}}.png" alt="{{item.id}}">
+          {{item.name}} - <strong>&nbsp;{{item.symbol}}</strong>
+        </mat-cell>
       </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> <strong>Price</strong> </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.priceUsd | currency}} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
