@@ -11,7 +11,7 @@
 
   <span class="example-spacer"></span>
 
-  <span style="margin-right: 10px;">{{ counter }}</span>
+  <span style="margin-right: 10px;">{{ (counter$ | async).counter }}</span>
 
   <button (click)="increment()" mat-icon-button>
     <i class="material-icons">

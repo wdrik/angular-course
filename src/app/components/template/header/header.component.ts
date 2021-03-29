@@ -1,7 +1,10 @@
+import { Decrement } from './../../../ngrx';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
+import { Increment } from 'src/app/ngrx';
+
 
 @Component({
   selector: 'app-header',
@@ -10,20 +13,22 @@ import { Store, select } from '@ngrx/store';
 })
 export class HeaderComponent implements OnInit {
 
-  public counter$: Observable<any>;
+  public counter$!: Observable<any>;
 
   constructor(private store: Store<{ counter: number }>) { }
 
   ngOnInit(): void {
+    this.counter$ = this.store.pipe(
+      select('counter')
+    )
   }
 
   increment() {
-    this.counter = this.counter + 1
+    this.store.dispatch(new Increment())
   }
 
 
   decrement() {
-    this.counter = this.counter - 1
-
+    this.store.dispatch(new Decrement())
   }
 }

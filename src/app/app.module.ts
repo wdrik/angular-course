@@ -78,7 +78,7 @@ registerLocaleData(localePt);
     MatRadioModule,
     ChartsModule,
     StoreModule.forRoot({
-      counterReducer
+      counter: counterReducer
     })
   ],
   providers: [{
