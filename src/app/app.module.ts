@@ -38,6 +38,10 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 
 import { ChartsModule } from 'ng2-charts';
 
+import { StoreModule } from '@ngrx/store';
+
+import { reducer as counterReducer } from './ngrx';
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -72,7 +76,10 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     MatRadioModule,
-    ChartsModule
+    ChartsModule,
+    StoreModule.forRoot({
+      counterReducer
+    })
   ],
   providers: [{
     provide: LOCALE_ID,
